@@ -18,7 +18,7 @@
         }
 
     // 获取地址栏参数的函数
-     function getUrlPrams(para) {
+     function getUrlParms(para) {
          //页面URL的查询部分字符串
          var serarch = location.search;
          //参数数组。数组单项为包含参数名和参数值的字符串，如“para=value”
@@ -89,7 +89,7 @@
 
         //跳转函数
         function jump(page,vue) {
-            if ("first" == page && !vue.pagination.first){
+            if ('first' == page && !vue.pagination.first){
                 vue.list(0);
             }else if('pre'== page && vue.pagination.hasPrevious){
                 vue.list(vue.pagination.number-1);
