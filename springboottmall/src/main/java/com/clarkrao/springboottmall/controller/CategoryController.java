@@ -67,4 +67,18 @@ public class CategoryController {
         Category category = categoryService.get(id);
         return category;
     }
+
+    @PutMapping(value = "/categories/{id}")
+    public Object update(Category category,MultipartFile image,HttpServletRequest request)
+            throws Exception{
+        String name = request.getParameter("name");
+        category.setName(name);
+        categoryService.update(category);
+
+        if (null != image) {
+            saveOrUpdateImageFile(category,image,request);
+        }
+
+        return category;
+    }
 }

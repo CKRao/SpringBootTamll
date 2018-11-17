@@ -48,4 +48,8 @@ public class CategoryService {
         Category category = categoryDAO.findOne(id);
         return category;
     }
+
+    public void update(Category category){
+        categoryDAO.save(category);
+    }
 }
