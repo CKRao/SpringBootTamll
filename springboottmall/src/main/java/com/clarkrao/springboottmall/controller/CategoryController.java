@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @Author: ClarkRao
  * @Date: 2018/11/13 23:17
- * @Description:
+ * @Description: REST请求控制器
  */
 @RestController
 public class CategoryController {
@@ -60,5 +60,11 @@ public class CategoryController {
         File file = new File(imageFolder, id + ".jpg");
         file.delete();
         return null;
+    }
+
+    @GetMapping(value = "/categories/{id}")
+    public Category get(@PathVariable("id")int id){
+        Category category = categoryService.get(id);
+        return category;
     }
 }

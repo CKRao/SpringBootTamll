@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @Author: ClarkRao
  * @Date: 2018/11/13 23:14
- * @Description:
+ * @Description: 后台页面跳转控制器
  */
 @Controller
 public class AdminPageController {
@@ -20,5 +20,10 @@ public class AdminPageController {
     @GetMapping(value = "/admin_category_list")
     public String listCategory(){
         return "admin/listCategory";
+    }
+
+    @GetMapping(value = "/admin_category_edit")
+    public String editCategory(){
+        return "admin/editCategory";
     }
 }
